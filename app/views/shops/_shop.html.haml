@@ -4,3 +4,6 @@
       = image_tag shop.image.url if shop.image.present?
     .shop__lower-info
       = shop.name
+    - if user_signed_in? && current_user.admin?
+      .shop-del 
+        = link_to "削除", "/shops/#{shop.id}", method: :delete
