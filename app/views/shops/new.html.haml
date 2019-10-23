@@ -1,0 +1,11 @@
+.shop-add
+  = form_with(model: @shop, local:true) do |form|
+    %h3
+      投稿する
+    = form.text_field :name, placeholder: "shop-name"
+    = form.label :image, class: 'form-image' do
+      = fa_icon 'picture-o', class: 'icon'
+      = form.file_field :image, class: 'hidden'
+    = form.text_area :address, placeholder: "shop-address"
+    = form.text_field :tel, placeholder: "telephone-numbers"
+    = form.submit "SEND"

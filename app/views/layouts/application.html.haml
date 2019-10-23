@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Enjoy
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+    %header
+      .header-container
+        .header-inner
+          %h1 煙joy!
+    %nav
+      .nav-container
+        %ul.navbar.flex-box
+          - if user_signed_in?
+            %li.li-space
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+            %li.li-space
+              = link_to "店舗登録", new_shop_path
+            %li.li-space
+              レビュー
+          - else
+            %li.li-space
+              = link_to "ログイン", new_user_session_path
+            %li.li-space
+              = link_to "新規登録", new_user_registration_path
+    = yield

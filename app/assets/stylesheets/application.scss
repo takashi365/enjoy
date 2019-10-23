@@ -1,0 +1,32 @@
+@import "rest";
+@import "font-awesome";
+@import "common";
+.main__left{
+  width: calc(100% - 80px);
+}
+.side{
+  width: 300px;
+  background-color: chocolate;
+}
+.nagoya{
+height: 300px;
+background-color: brown;
+}
+.gifu{
+  height: 300px;
+  background-color: #345;
+}
+.mie{
+  height: 300px;
+  background-color: brown;
+}
+.shop{
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.hidden{
+  display: none;
+}

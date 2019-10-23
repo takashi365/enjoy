@@ -1,0 +1,34 @@
+.wrapper
+  %header
+    .header-container
+      .header-inner
+        %h1 煙joy!
+  %nav
+    .nav-container
+      %ul.navbar.flex-box
+        %li.li-space
+          ログイン
+        %li.li-space
+          = link_to new_shop_path do
+            新規登録
+        %li.li-space
+          レビュー
+  .main.flex-box
+    .main__left
+      店舗エリア＞＞店舗情報
+      .shop-data
+        %ul
+          %li
+            = @shop.name
+          %li
+            = @shop.address
+          %li
+            = @shop.tel
+      .shop-data__map
+        = link_to "https://www.google.com/search?q=#{@shop.address}" do
+          地図
+    -# .side
+    -#   ランキング
+  %footer
+    .footer-container
+    フッター

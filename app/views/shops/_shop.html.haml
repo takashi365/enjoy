@@ -1,0 +1,6 @@
+= link_to "/shops/#{shop.id}" do
+  .shop{ data: { shop_id: shop.id } }
+    .shop__upper-info
+      = image_tag shop.image.url if shop.image.present?
+    .shop__lower-info
+      = shop.name
