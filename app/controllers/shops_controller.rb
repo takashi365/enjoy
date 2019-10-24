@@ -6,6 +6,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
+    @review = Review.all
   end
 
   def new
@@ -25,7 +26,7 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :image, :address, :tel)
+    params.require(:shop).permit(:name, :image, :address, :tel).merge(shop_id: params[:id], user_id: current_user.id)
   end
   def move_to_index
     redirect_to root_path unless user_signed_in?
