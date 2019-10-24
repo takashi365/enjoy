@@ -11,6 +11,19 @@
       三重
   .side
     ランキング
+    - @ranking.each.with_index(1) do |shop, i|
+      %li{ data: { shop_id: shop.id } }
+        = link_to "/shops/#{shop.id}" do
+          .rank-box
+            .rank-box__cell
+              %p.label
+                = i.to_s + "位"
+          .rank-box__cell
+            %p.no-space
+              = shop.name
+            = image_tag shop.image.url if shop.image.present?
+
+
 %footer
   .footer-container
   フッター

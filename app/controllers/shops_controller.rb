@@ -1,7 +1,9 @@
 class ShopsController < ApplicationController
   before_action :move_to_index, except: :index
+  before_action :ranking
   def index
     @shop = Shop.all
+    @review = Review.all
   end
 
   def show
@@ -30,5 +32,8 @@ class ShopsController < ApplicationController
   end
   def move_to_index
     redirect_to root_path unless user_signed_in?
+  end
+  def ranking
+    @ranking = Shop.limit(5)
   end
 end
