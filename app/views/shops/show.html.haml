@@ -11,10 +11,10 @@
           = @shop.tel
     .shop-data__review
       レビュー一覧
-      = render @review
+      = render @review.where(shop_id: @shop.id)
     .shop-data__rate__ave
       平均評価点
-      = @review.average(:rate).round if @review.present?
+      = @review.where(shop_id: @shop.id).average(:rate).round if @review.where(shop_id: @shop.id).present?
     .shop-data__map
       = link_to "https://www.google.co.jp/maps/place/#{@shop.address}" do
         地図
