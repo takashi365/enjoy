@@ -1,4 +1,4 @@
-.main.flex-box
+.main
   .main__left
     店舗エリア＞＞店舗情報
     .shop-data
@@ -9,11 +9,14 @@
           = @shop.address
         %li
           = @shop.tel
+    .shop-data__review
+      レビュー一覧
+      = render @review
     .shop-data__map
       = link_to "https://www.google.co.jp/maps/place/#{@shop.address}" do
         地図
-    -# .side
-    -#   ランキング
+    .shop-data__add
+      = link_to "レビューを書く", "/shops/#{@shop.id}/reviews/new"
 %footer
   .footer-container
     フッター
