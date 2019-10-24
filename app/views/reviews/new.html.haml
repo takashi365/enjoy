@@ -1,8 +1,11 @@
-.form-box
-  = form_with model: [@shop, @review], local:true do |form|
-    .form-box__point
-      = form.label :評価
-      = form.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1
-    .form-box__review
-      = form.text_field :review, placeholder: "おすすめポイント"
-    = form.submit "SEND"
+.main.container
+  .form-box
+    = form_with model: [@shop, @review], local:true do |form|
+      .form-box__review
+        = form.label :おすすめポイント
+        = form.text_field :review, placeholder: "おすすめポイント", class: "review"
+      .form-box__point
+        = form.label :評価
+        = form.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, class:"point"
+      .form-box__btn
+        = form.submit "SEND", class:"btn"

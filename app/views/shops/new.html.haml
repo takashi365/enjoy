@@ -1,11 +1,18 @@
-.shop-add
+.shop-add.container
   = form_with(model: @shop, local:true) do |form|
-    %h3
-      投稿する
-    = form.text_field :name, placeholder: "shop-name"
-    = form.label :image, class: 'form-image' do
-      = fa_icon 'picture-o', class: 'icon'
-      = form.file_field :image, class: 'hidden'
-    = form.text_area :address, placeholder: "shop-address"
-    = form.text_field :tel, placeholder: "telephone-numbers"
-    = form.submit "SEND"
+    %h3 投稿する（管理者専用画面）
+    .shop-add__name
+      店名：
+      = form.text_field :name, placeholder: "shop-name", class: 'name-field'
+    .shop-add__img
+      = form.label :image, class: 'form-image' do
+        = fa_icon 'picture-o', class: 'icon'
+        = form.file_field :image
+    .shop-add__address
+      住所：
+      = form.text_area :address, placeholder: "shop-address", class: 'address-field'
+    .shop-add__tel
+      電話：
+      = form.text_field :tel, placeholder: "telephone-numbers", class: 'tel-field'
+    .shop-add__btn
+      = form.submit "SEND", class: 'form-btn'
