@@ -1,25 +1,20 @@
-.main
-  .main__left
-    店舗エリア＞＞店舗情報
-    .shop-data
-      %ul
-        %li
-          = @shop.name
-        %li
-          = @shop.address
-        %li
-          = @shop.tel
+.main.container
+  .shop-data.a-white
+    %ul
+      %li.shop-data__name
+        = @shop.name
+      %li.shop-data__address
+        = @shop.address
+      %li.shop-data__tel
+        = @shop.tel
     .shop-data__review
-      レビュー一覧
+      %h3 クチコミ一覧
       = render @review.where(shop_id: @shop.id)
-    .shop-data__rate__ave
+    .shop-data__rate
       平均評価点
       = @review.where(shop_id: @shop.id).average(:rate).round if @review.where(shop_id: @shop.id).present?
     .shop-data__map
       = link_to "https://www.google.co.jp/maps/place/#{@shop.address}" do
-        地図
+        Googleマップで検索
     .shop-data__add
       = link_to "レビューを書く", "/shops/#{@shop.id}/reviews/new"
-%footer
-  .footer-container
-    フッター

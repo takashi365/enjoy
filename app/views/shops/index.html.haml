@@ -1,8 +1,8 @@
-.main.flex-box
-  .main__left.area-data
-    店舗エリア
+.main.flex-box.wf-sawarabigothic.container
+  .main__left
+    %h2 店舗エリア
     .nagoya
-      愛知
+      %p.area-text 愛知
       .shops.flex-box
         = render(partial: "shop", collection: @aichi, as: "shop")
     .gifu
@@ -13,8 +13,8 @@
       三重
       .shops.flex-box
         = render(partial: "shop", collection: @mie, as: "shop")
-  .side
-    クチコミの多いランキング
+  .side.li-none
+    %h2 投稿数ランキング
     - @ranking.each.with_index(1) do |shop, i|
       %li{ data: { shop_id: shop.id } }
         = link_to "/shops/#{shop.id}" do
@@ -26,8 +26,3 @@
             %p.no-space
               = shop.name
             = image_tag shop.image.url if shop.image.present?
-
-
-%footer
-  .footer-container
-  フッター

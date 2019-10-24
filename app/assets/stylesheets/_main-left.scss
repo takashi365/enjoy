@@ -1,0 +1,60 @@
+main{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  flex-direction: wrap;
+}
+.main__left{
+  width: calc(100% - 80px);
+  background-color: burlywood;
+  border: solid 1px burlywood;
+  border-radius: 10px;
+  margin-right: 5px;
+  a{
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.nagoya{
+  height: 300px;
+  background-color: brown;
+  border: solid 10px brown;
+  border-radius: 10px;
+  }
+  .gifu{
+    height: 300px;
+    background-color: #345;
+    border: solid 10px #345;
+    border-radius: 10px;
+  }
+  .mie{
+    height: 300px;
+    background-color: brown;
+    border: solid 10px brown;
+    border-radius: 10px;
+  }
+
+  .img-box{
+    width: 120px;
+  }
+
+  .shop{
+    width: 120px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: burlywood;
+    border: double 10px brown;
+    border-radius: 10px;
+    &__upper-info{
+      height: 120px;
+    }
+    &__lower-info{
+      height: 40px;
+    }
+    &__rate__ave{
+      height: 20px;
+    }
+    &__del {
+      height: 20px;
+    }
+  }

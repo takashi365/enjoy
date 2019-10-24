@@ -1,0 +1,31 @@
+.shop-data{
+  background-color: brown;
+  overflow: scroll;
+  padding-bottom: 40px; 
+  min-height: 600px;
+  ul{
+    background-color: burlywood;
+    border: double 10px brown;
+    border-radius: 10px;
+  }
+  h3{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &__name{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  &__review{
+  }
+  &__rate{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &__map{
+    text-align: center;
+  }
+  &__add{
+    text-align: center
+  }
+}

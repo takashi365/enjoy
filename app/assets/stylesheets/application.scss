@@ -1,32 +1,103 @@
 @import "rest";
 @import "font-awesome";
-@import "common";
-.main__left{
-  width: calc(100% - 80px);
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Gothic');
+.wf-sawarabigothic {
+   font-family: "Sawarabi Gothic";
 }
-.side{
-  width: 300px;
+@import "header";
+@import "common";
+@import "main-left";
+@import "add-form";
+@import "shop-data";
+
+body{
   background-color: chocolate;
 }
-.nagoya{
-height: 300px;
-background-color: brown;
+.logo{
+  border: double 10px chocolate;
+  border-radius: 10px;
 }
-.gifu{
-  height: 300px;
-  background-color: #345;
-}
-.mie{
-  height: 300px;
+.form-box{
   background-color: brown;
+  overflow: scroll;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  min-height: 600px;
+  &__btn{
+    text-align: center;
+    .btn{
+      position: relative;
+      display: inline-block;
+      padding: 0.25em 0.5em;
+      text-decoration: none;
+      background: rgb(202, 94, 99);/*背景色*/
+      color: rgb(202, 94, 99);/*=背景色*/
+      box-shadow: inset 0 2px 0 rgba(255,255,255,0.2);
+      border-bottom: solid 2px #640228;
+      border-radius: 4px;
+      font-weight: bold;
+      text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 1px 1px rgba(0, 0, 0, 0.38);
+    }
+  }
+  &__point{
+    padding-left: 95px;
+    padding-top: 20px;
+    .point{
+    }
+  }
+  &__review{
+    .review{
+      width: 500px;
+      height: 80px;
+    }
+  }
 }
-.shop{
-  height: 100px;
-  width: 100px;
-  background-color: #fff;
-  margin-left: 10px;
-  margin-right: 10px;
+.review-box{
+  background-color: burlywood;
+  border: double 10px brown;
+  border-radius: 10px;
 }
-.hidden{
-  display: none;
+
+.rank-box__cell{
+  background-color: brown;
+  border: double 10px burlywood;
+  border-radius: 10px;
 }
+
+.side{
+  width: 300px;
+  background-color: burlywood;
+  border: solid 1px burlywood;;
+  border-radius: 10px;
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+footer{
+  background: #c84040;
+  font-size: 0.9rem;
+  color: #fff;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  position: fixed;
+}
+.footer-container{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.center{
+  text-align: center;
+}
+.brown{
+  background-color: brown;
+  overflow: scroll;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  min-height: 600px;
+}
+
+
+

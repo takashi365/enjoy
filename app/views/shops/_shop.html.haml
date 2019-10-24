@@ -1,14 +1,14 @@
 = link_to "/shops/#{shop.id}" do
   .shop{ data: { shop_id: shop.id } }
     .shop__upper-info
-      = image_tag shop.image.url if shop.image.present?
+      = image_tag shop.image.url, class: "img-box" if shop.image.present?
     .shop__lower-info
       = shop.name
-    .shop-data__rate__ave
+    .shop__rate__ave
       平均評価：
       - if @review.where(shop_id: shop.id).present?
         = @review.where(shop_id: shop.id).average(:rate).round
       - else
         なし
-    .shop-del 
+    .shop__del 
       = link_to "削除", "/shops/#{shop.id}", method: :delete if user_signed_in? && current_user.admin?

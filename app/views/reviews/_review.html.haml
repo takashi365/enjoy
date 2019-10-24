@@ -1,4 +1,10 @@
-.review-box
-  = review.review
-  = review.user.name
-  = review.rate
+.review-box.flex-box
+  .review-box__text.li-space
+    コメント：
+    = review.review
+  .review-box__user.li-space
+    投稿者：
+    = review.user.name
+  .review-box__rate.li-space
+    評価：
+    = review.rate
