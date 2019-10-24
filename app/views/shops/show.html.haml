@@ -12,6 +12,9 @@
     .shop-data__review
       レビュー一覧
       = render @review
+    .shop-data__rate__ave
+      平均評価点
+      = @review.average(:rate).round if @review.present?
     .shop-data__map
       = link_to "https://www.google.co.jp/maps/place/#{@shop.address}" do
         地図
