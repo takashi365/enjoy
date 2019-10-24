@@ -2,15 +2,19 @@
   .main__left.area-data
     店舗エリア
     .nagoya
-      名古屋
+      愛知
       .shops.flex-box
-        = render @shop
+        = render(partial: "shop", collection: @aichi, as: "shop")
     .gifu
       岐阜
+      .shops.flex-box
+        = render(partial: "shop", collection: @gifu, as: "shop")
     .mie
       三重
+      .shops.flex-box
+        = render(partial: "shop", collection: @mie, as: "shop")
   .side
-    ランキング
+    クチコミの多いランキング
     - @ranking.each.with_index(1) do |shop, i|
       %li{ data: { shop_id: shop.id } }
         = link_to "/shops/#{shop.id}" do

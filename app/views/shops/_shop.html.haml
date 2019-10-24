@@ -6,6 +6,9 @@
       = shop.name
     .shop-data__rate__ave
       平均評価：
-      = @review.average(:rate).round if @review.present?
+      - if @review.where(shop_id: shop.id).present?
+        = @review.where(shop_id: shop.id).average(:rate).round
+      - else
+        なし
     .shop-del 
       = link_to "削除", "/shops/#{shop.id}", method: :delete if user_signed_in? && current_user.admin?

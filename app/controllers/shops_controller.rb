@@ -3,6 +3,9 @@ class ShopsController < ApplicationController
   before_action :ranking
   def index
     @shop = Shop.all
+    @aichi = Shop.where("address LIKE ?", "%愛知%")
+    @gifu = Shop.where("address LIKE ?", "%岐阜%")
+    @mie = Shop.where("address LIKE ?", "%三重%")
     @review = Review.all
   end
 
@@ -26,14 +29,17 @@ class ShopsController < ApplicationController
     redirect_to root_path
   end
 
+  def ranking
+    shop_ids = Review.group(:shop_id).order('count_shop_id DESC').limit(5).count(:shop_id).keys
+    @ranking = shop_ids.map{ |id| Shop.find(id) }
+  end
+
   private
   def shop_params
-    params.require(:shop).permit(:name, :image, :address, :tel).merge(shop_id: params[:id], user_id: current_user.id)
+    params.require(:shop).permit(:name, :image, :address, :tel)
   end
   def move_to_index
     redirect_to root_path unless user_signed_in?
   end
-  def ranking
-    @ranking = Shop.limit(5)
-  end
+
 end
