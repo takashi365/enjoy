@@ -5,10 +5,8 @@ main{
 }
 .main__left{
   width: calc(100% - 80px);
-  background-color: burlywood;
-  border: solid 1px burlywood;
-  border-radius: 10px;
-  margin-right: 5px;
+  background-color: #E7D3C4;
+  border: solid 1px #CA9C7B;
   a{
     color: #000;
     text-decoration: none;
@@ -17,20 +15,20 @@ main{
 
 .nagoya{
   height: 300px;
-  background-color: brown;
-  border: solid 10px brown;
+  background-color: #F6EEE9;
+  border: solid 10px #F6EEE9;
   border-radius: 10px;
   }
   .gifu{
     height: 300px;
-    background-color: #345;
-    border: solid 10px #345;
+    background-color: #EFE0D6;
+    border: solid 10px #EFE0D6;
     border-radius: 10px;
   }
   .mie{
     height: 300px;
-    background-color: brown;
-    border: solid 10px brown;
+    background-color: #E7D3C4;
+    border: solid 10px #E7D3C4;
     border-radius: 10px;
   }
 
@@ -42,8 +40,8 @@ main{
     width: 120px;
     margin-left: 10px;
     margin-right: 10px;
-    background-color: burlywood;
-    border: double 10px brown;
+    background-color: transparent;
+    border: double 10px #875C3F;
     border-radius: 10px;
     &__upper-info{
       height: 120px;

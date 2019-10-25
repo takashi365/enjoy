@@ -1,11 +1,11 @@
 .shop-data{
-  background-color: brown;
+  background-color: #E7D3C4;
   overflow: scroll;
   padding-bottom: 40px; 
   min-height: 600px;
   ul{
-    background-color: burlywood;
-    border: double 10px brown;
+    background-color: #F6EEE9;
+    border: double 10px #875C3F;
     border-radius: 10px;
   }
   h3{
@@ -28,4 +28,10 @@
   &__add{
     text-align: center
   }
+}
+.review-box{
+  background-color: #F6EEE9;
+  border: double 3px #875C3F;
+  border-radius: 10px;
+  margin: 5px 0;
 }
