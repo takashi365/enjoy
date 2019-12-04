@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: enjoy_production
-  username: enjoy
-  password: <%= ENV['ENJOY_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
